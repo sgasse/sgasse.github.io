@@ -57,10 +57,11 @@ table {
 
 body {
     /* set custom font */
-    font: bold 7vh Raleway, Arial, sans-serif;
+    font: normal 7vh Raleway, Arial, sans-serif;
+    font-weight: bold;
 }
 
-.wrapper {
+.background {
     /* fill screen */
     width: 100vw;
     height: 100vh;
@@ -69,7 +70,23 @@ body {
     overflow-y: auto;
     background: url(img/bg_ice_small.jpg) no-repeat center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.wrapper {
+    width: 100vw;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .slogan {
@@ -79,9 +96,43 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: rgba(255, 255, 255, 1.0);
 }
 
 .slogan > div {
     padding: 0.2em;
+}
+
+.arrowhead {
+    text-align: center;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.personalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+#profilePic {
+    width: 3em;
+    border-radius: 10%;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10%;
+}
+
+a:hover, a:active {
+    background-color: black;
+    color: white;
 }
 
