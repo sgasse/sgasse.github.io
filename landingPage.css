@@ -57,7 +57,7 @@ table {
 
 body {
     /* set custom font */
-    font: bold 14px Raleway, Arial, sans-serif;
+    font: bold 7vh Raleway, Arial, sans-serif;
 }
 
 .wrapper {
@@ -69,5 +69,19 @@ body {
     overflow-y: auto;
     background: url(img/bg_ice_small.jpg) no-repeat center fixed;
     background-size: cover;
+
+}
+
+.slogan {
+    width: 60vw;
+    height: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan > div {
+    padding: 0.2em;
 }
 
