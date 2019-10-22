@@ -9,4 +9,4 @@ start:
 	docker run --name mypp -p 80:80 ppage
 
 restart:
-	docker rm -f mypp && docker build -t ppage . && docker run --name mypp -d -p 80:80 ppage
+	docker rm -f mypp  || true && docker build -t ppage . && docker run --name mypp -d -p 80:80 ppage
