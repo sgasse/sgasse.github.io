@@ -155,7 +155,7 @@ body {
 
 #profilePic {
     width: 3em;
-    border-radius: 10%;
+    border-radius: 15%;
 }
 
 #fullname {
@@ -169,7 +169,7 @@ a:link, a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 10%;
+    border-radius: 15%;
 }
 
 a:hover, a:active {
