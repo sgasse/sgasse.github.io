@@ -72,6 +72,9 @@ body {
     background-color: royalblue;
     /* background image */
     background-image: url(img/bg_ice_small.jpg);
+    background-image: url(img/bg_field_small.jpg);
+    background-image: url(img/bg_sea_small.jpg);
+    background-image: url(img/bg_lawn_small.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -102,8 +105,9 @@ body {
 
 .slogan > div {
     padding: 0.2em;
-    /* set font color to transparent to be faded-in with an animation */
+    /* set font color and shadow to transparent to be faded-in with an animation */
     color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 0.3em rgba(0, 0, 0, 0);
     /* fade-in slogan */
     animation-name: slogan-entrance;
     animation-delay: 0.5s;
@@ -113,15 +117,20 @@ body {
 }
 
 @keyframes slogan-entrance {
-    0%   {transform: translateY(1em); color: rgba(255, 255, 255, 0);}
-    100% {transform: translateY(0); color: rgba(255, 255, 255, 1.0);}
+    0%   {transform: translateY(1em);
+          color: rgba(255, 255, 255, 0);
+          text-shadow: 0 0 0.3em rgba(0, 0, 0, 0);}
+    100% {transform: translateY(0);
+          color: rgba(255, 255, 255, 1.0);
+          text-shadow: 0 0 0.3em rgba(0, 0, 0, 1.0);}
 }
 
 .arrowhead {
     padding: 1em;
     text-align: center;
-    /* set font color to transparent to be faded-in with an animation */
+    /* set font color and shadow to transparent to be faded-in with an animation */
     color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 0.3em rgba(0, 0, 0, 0);
     /* light-up arrowhead */
     animation-name: arrow-show;
     animation-delay: 1.5s;
@@ -131,8 +140,10 @@ body {
 }
 
 @keyframes arrow-show {
-    0%   {color: rgba(255, 255, 255, 0);}
-    100%  {color: rgba(255, 255, 255, 1.0);}
+    0%   {color: rgba(255, 255, 255, 0);
+          text-shadow: 0 0 0.3em rgba(0, 0, 0, 0);}
+    100%  {color: rgba(255, 255, 255, 1.0);
+           text-shadow: 0 0 0.3em rgba(0, 0, 0, 1.0);}
 }
 
 .personalInfo {
@@ -150,6 +161,10 @@ body {
 #profilePic {
     width: 3em;
     border-radius: 10%;
+}
+
+#fullname {
+    text-shadow: 0 0 0.3em rgba(0, 0, 0, 1.0);
 }
 
 a:link, a:visited {
