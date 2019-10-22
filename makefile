@@ -10,3 +10,6 @@ start:
 
 restart:
 	docker rm -f mypp  || true && docker build -t ppage . && docker run --name mypp -d -p 80:80 ppage
+
+updateRemote:
+	docker build -t page . && ssh root@simongasse.de 'docker rm -f mypp || true' && docker save ppage | ssh -C root@simongasse.de docker load && ssh root@simongasse.de 'docker run --name mypp -d -p 80:80 ppage'
