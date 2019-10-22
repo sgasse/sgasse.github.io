@@ -1,23 +1,28 @@
 #!/bin/bash
 
+function checkAndSetBackground {
+    if [ "$(cat curBG.info)" != "$1" ]; then
+        rm bg.jpg
+        cp "$1" bg.jpg
+        echo "$1" > curBG.info
+        #echo "Changed background to $1"
+    fi
+}
+
 function setWinter {
-    rm bg.jpg
-    cp bg_ice_small.jpg bg.jpg
+    checkAndSetBackground "bg_ice_small.jpg"
 }
 
 function setSpring {
-    rm bg.jpg
-    cp bg_lawn_small.jpg bg.jpg
+    checkAndSetBackground "bg_lawn_small.jpg"
 }
 
 function setSummer {
-    rm bg.jpg
-    cp bg_sea_small.jpg bg.jpg
+    checkAndSetBackground "bg_sea_small.jpg"
 }
 
 function setFall {
-    rm bg.jpg
-    cp bg_field_small.jpg bg.jpg
+    checkAndSetBackground "bg_field_small.jpg"
 }
 
 
@@ -26,6 +31,8 @@ month=$(date +%m)
 while [ 1 ]
 do
     cd /var/www/simongasse.de/img
+    #echo "curBG.info is:"
+    echo "$(cat curBG.info)"
     if [ "$month" == "1" ]; then
         setWinter
     elif [ "$month" == "2" ]; then
@@ -51,6 +58,6 @@ do
     elif [ "$month" == "12" ]; then
         setWinter
     fi
-    sleep 3d
+    sleep 20s
 done
 

@@ -10,3 +10,4 @@ nginx
 
 # change background image according to season, keep container alive
 /bin/bash /root/changeBG.sh
+
