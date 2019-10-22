@@ -68,8 +68,6 @@ body {
     /* allow only vertical scrolling */
     overflow-x: hidden;
     overflow-y: auto;
-    /* fallback background color */
-    background-color: royalblue;
     /* background image */
     background-image: url(img/bg.jpg);
     background-position: top;
@@ -123,7 +121,7 @@ body {
 }
 
 .arrowhead {
-    padding: 1em;
+    margin-top: 7vh;
     text-align: center;
     /* set font color and shadow to transparent to be faded-in with an animation */
     color: rgba(255, 255, 255, 0);
