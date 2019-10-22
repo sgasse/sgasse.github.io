@@ -77,7 +77,7 @@ body {
 
 .textlayer {
     width: 100vw;
-    height: 170vh;
+    height: 200vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -96,11 +96,37 @@ body {
 
 .slogan > div {
     padding: 0.2em;
+    /* set font color to transparent to be faded-in with an animation */
+    color: rgba(255, 255, 255, 0);
+    /* fade-in slogan */
+    animation-name: slogan-entrance;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slogan-entrance {
+    0%   {transform: translateY(1em); color: rgba(255, 255, 255, 0);}
+    100% {transform: translateY(0); color: rgba(255, 255, 255, 1.0);}
 }
 
 .arrowhead {
+    padding: 1em;
     text-align: center;
-    color: rgba(255, 255, 255, 1.0);
+    /* set font color to transparent to be faded-in with an animation */
+    color: rgba(255, 255, 255, 0);
+    /* light-up arrowhead */
+    animation-name: arrow-show;
+    animation-delay: 1.5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes arrow-show {
+    0%   {color: rgba(255, 255, 255, 0);}
+    100%  {color: rgba(255, 255, 255, 1.0);}
 }
 
 .personalInfo {
@@ -109,6 +135,10 @@ body {
     justify-content: space-around;
     align-items: center;
     color: rgba(255, 255, 255, 1.0);
+}
+
+.personalInfo > div {
+    margin: 1vh;
 }
 
 #profilePic {
