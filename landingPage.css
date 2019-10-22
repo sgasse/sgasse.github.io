@@ -72,9 +72,6 @@ body {
     background-color: royalblue;
     /* background image */
     background-image: url(img/bg_ice_small.jpg);
-    background-image: url(img/bg_field_small.jpg);
-    background-image: url(img/bg_sea_small.jpg);
-    background-image: url(img/bg_lawn_small.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
