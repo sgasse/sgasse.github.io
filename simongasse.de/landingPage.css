@@ -71,7 +71,7 @@ body {
     /* fallback background color */
     background-color: royalblue;
     /* background image */
-    background-image: url(img/bg_ice_small.jpg);
+    background-image: url(img/bg.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
