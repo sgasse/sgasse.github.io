@@ -68,7 +68,7 @@ body {
     /* allow only vertical scrolling */
     overflow-x: hidden;
     overflow-y: auto;
-    background: url(img/bg_ice_small.jpg) no-repeat center fixed;
+    background: url(img/bg_ice_small.jpg) no-repeat top fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
