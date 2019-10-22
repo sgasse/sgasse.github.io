@@ -58,6 +58,6 @@ do
     elif [ "$month" == "12" ]; then
         setWinter
     fi
-    sleep 20s
+    sleep 12h
 done
 
