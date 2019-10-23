@@ -5,7 +5,6 @@ function checkAndSetBackground {
         rm bg.jpg
         cp "$1" bg.jpg
         echo "$1" > curBG.info
-        #echo "Changed background to $1"
     fi
 }
 
@@ -31,8 +30,6 @@ month=$(date +%m)
 while [ 1 ]
 do
     cd /var/www/simongasse.de/img
-    #echo "curBG.info is:"
-    echo "$(cat curBG.info)"
     if [ "$month" == "1" ]; then
         setWinter
     elif [ "$month" == "2" ]; then
