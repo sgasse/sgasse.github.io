@@ -69,7 +69,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     /* background image */
-    background-image: url(img/bg.jpg);
+    background-image: url("var(--bg-url)");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
