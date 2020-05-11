@@ -1,2 +1,5 @@
 Flask==1.1.2
 pylint==2.5.2
+pg8000==1.15.2
+beautifulsoup4==4.9.0
+requests==2.23.0

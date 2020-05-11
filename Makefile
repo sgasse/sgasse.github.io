@@ -1,5 +1,5 @@
 prepare-venv:
-	if [ -d "venv" ]; then rm -r venv; fi; python3 -m venv venv && pip3 install -r uwsgi_flask_backend/requirements.txt
+	if [ -d "venv" ]; then rm -r venv; fi; python3 -m venv venv && . venv/bin/activate && pip3 install -r uwsgi_flask_backend/requirements.txt
 
 build:
 	docker-compose build

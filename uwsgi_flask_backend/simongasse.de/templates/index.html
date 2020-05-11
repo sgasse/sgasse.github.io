@@ -12,6 +12,10 @@
             .background {
                 background-image: url("{{ bg_url }}");
             }
+            @font-face {
+                font-family: Raleway;
+                src: url("{{ url_for('static', filename='font/raleway_thin-webfont.ttf') }}")
+            }
         </style>
         <div id='background' class='background'>
             <div class='wrapper'>
