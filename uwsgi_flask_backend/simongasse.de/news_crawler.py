@@ -86,7 +86,6 @@ class NewsCrawler:
 def main():
     NC = NewsCrawler(table_name='news')
     #NC.retrieve_and_store_news()
-    pass
 
 
 if __name__ == '__main__':

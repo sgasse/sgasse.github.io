@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request
 from datetime import datetime
 
 from news_crawler import NewsCrawler
+from secret import auth_key
 
 
 app = Flask(__name__)
@@ -31,7 +32,7 @@ def command_prompt():
         'empty': NC.empty_table
     }
     if request.method == 'POST':
-        if request.form['auth_code'] != 'abc':
+        if request.form['auth_code'] != auth_key:
             return render_template('form.html', msg='Wrong password')
         else:
             if request.form['command'] in valid_cmds:
@@ -45,5 +46,7 @@ def command_prompt():
 
 @app.route('/news')
 def news_renderer():
-    news = NC.query_news_from_db()
+    maxrank = request.args.get('minrank', default=10, type=int)
+    days = request.args.get('days', default=0, type=int)
+    news = NC.query_news_from_db(max_rank=maxrank, days=days)
     return render_template('news.html', news=news)

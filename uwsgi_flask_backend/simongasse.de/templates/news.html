@@ -4,17 +4,19 @@
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>News</title>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/news.css') }}">
     </head>
 
     <body>
-        <h1>News</h1>
-        <div>
-            {% for t in news %}
-            <div>{{ t.rank }}</div>
-            <div>{{ t.date }}</div>
-            <div>{{ t.headline }}</div>
-            <div>{{ t.link }}</div>
-            {% endfor %}
+        <div class='headline'>News</div>
+        <div class='tableWrapper'>
+            <div class='table'>
+                {% for t in news %}
+                <div class='itemWrapper'>
+                    <div class='item'><a href='{{ t.link}}'>{{ t.headline }}<br>({{ t.rank }}|{{ t.date }})</a> </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </body>
 

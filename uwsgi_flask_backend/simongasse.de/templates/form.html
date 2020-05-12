@@ -4,15 +4,18 @@
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/form.css') }}">
     </head>
 
     <body>
         <form action='' method='post'>
-            <input type='text' name='auth_code' placeholder='Enter auth-code'>
-            <input type='text' name='command' placeholder='Enter command'>
-            <input type='submit'>
-            <div>
-                {{ msg }}
+            <div class='itemWrapper'>
+                <input type='text' name='auth_code' placeholder='Enter auth-code' class='item'>
+                <input type='text' name='command' placeholder='Enter command' class='item'>
+                <input type='submit' class='item'>
+                <div class='item'>
+                    {{ msg }}
+                </div>
             </div>
         </form>
     </body>
