@@ -8,8 +8,12 @@
 
     <body>
         <form action='' method='post'>
-            <input type='text' name='password' placeholder='Say friend and enter'>
+            <input type='text' name='auth_code' placeholder='Enter auth-code'>
+            <input type='text' name='command' placeholder='Enter command'>
             <input type='submit'>
+            <div>
+                {{ msg }}
+            </div>
         </form>
     </body>
 

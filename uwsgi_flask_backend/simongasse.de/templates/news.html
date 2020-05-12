@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News</title>
+    </head>
+
+    <body>
+        <h1>News</h1>
+        <div>
+            {% for t in news %}
+            <div>{{ t.rank }}</div>
+            <div>{{ t.date }}</div>
+            <div>{{ t.headline }}</div>
+            <div>{{ t.link }}</div>
+            {% endfor %}
+        </div>
+    </body>
+
+</html>

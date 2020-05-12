@@ -1,9 +1,11 @@
 from flask import Flask, render_template, url_for, request
 from datetime import datetime
 
-from news_crawler import main as nc_main
+from news_crawler import NewsCrawler
+
 
 app = Flask(__name__)
+NC = NewsCrawler()
 
 
 @app.route('/')
@@ -22,15 +24,26 @@ def landing_page():
     return render_template('index.html', bg_url=bg_url_)
 
 
-@app.route('/form', methods=['GET', 'POST'])
-def login_form():
-
+@app.route('/cmd', methods=['GET', 'POST'])
+def command_prompt():
+    valid_cmds = {
+        'retrieve': NC.retrieve_and_store_news,
+        'empty': NC.empty_table
+    }
     if request.method == 'POST':
-        if request.form['password'] != 'abc':
-            return render_template('form.html')
+        if request.form['auth_code'] != 'abc':
+            return render_template('form.html', msg='Wrong password')
         else:
-            nc_main()
-            bg_url_ = url_for('static', filename='img/bg_ice_small.jpg')
-            return render_template('index.html', bg_url=bg_url_)
+            if request.form['command'] in valid_cmds:
+                valid_cmds[request.form['command']]()
+                return render_template('form.html', msg=f"Ran command {request.form['command']}")
+            else:
+                return render_template('form.html', msg=f"Unknown command '{request.form['command']}'")
+
     return render_template('form.html')
 
+
+@app.route('/news')
+def news_renderer():
+    news = NC.query_news_from_db()
+    return render_template('news.html', news=news)
