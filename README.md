@@ -6,6 +6,8 @@ To host the site, I bundle it in a docker container running a uwsgi server. This
 
 The background of the website changes according to the season. This is handeled by flask, which templates the right background through jinja2 into the style of the html file.
 
+Additionally, I implemented a basic news crawler that queries the current top ten articles from a major German news site every hour. The sentiment of the articles are assessed with the word corpus of the project ['Deutscher Wortschatz/Leipzig Corpora Collection'](https://wortschatz.uni-leipzig.de/de/download) by the University of Leipzig. You can access the list of news colored by their sentiment at [simongasse.de/news](http://www.simongasse.de/news)
+
 
 ## Commands to build and deploy the website
 

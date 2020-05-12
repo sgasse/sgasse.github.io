@@ -27,3 +27,15 @@ You may not copy, use or distribute the images embedded in this website.
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is available with a FAQ at:
 http://scripts.sil.org/OFL
+
+---
+
+
+# Projekt Deutscher Wortschatz / Leipzig Corpora Collection
+
+The corpus of positive and negative words with weights for my implementation of sentiment analysis can be downloaded [here](https://wortschatz.uni-leipzig.de/de/download). It was published as:
+
+D. Goldhahn, T. Eckart & U. Quasthoff: Building Large Monolingual Dictionaries at the Leipzig Corpora Collection: From 100 to 200 Languages.
+In: Proceedings of the 8th International Language Resources and Evaluation (LREC'12), 2012
+
+The corpus is licenced with the [Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported licence](https://creativecommons.org/licenses/by-nc-sa/3.0/).

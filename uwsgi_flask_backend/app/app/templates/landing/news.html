@@ -4,7 +4,7 @@
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>News</title>
-        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/news.css') }}">
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='landing/news.css') }}">
     </head>
 
     <body>
@@ -13,7 +13,9 @@
             <div class='table'>
                 {% for t in news %}
                 <div class='itemWrapper'>
-                    <div class='item'><a href='{{ t.link}}'>{{ t.headline }}<br>({{ t.rank }}|{{ t.date }})</a> </div>
+                    <div class='item'>
+                        <a href='{{ t.link}}' style='color:{{ t.senti_color }}'>{{ t.headline }}<br>({{ t.rank }}|{{ t.retrieved }})</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

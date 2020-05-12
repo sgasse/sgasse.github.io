@@ -1,20 +1,11 @@
 version: '3'
 services:
-    postgres_backend:
-        image: postgres:12.2-alpine
-        volumes:
-            - ./data/postgres_data:/var/lib/postgresql/data
-        environment:
-            - POSTGRES_PASSWORD=docker
-        ports:
-            - 5432:5432
-
     uwsgi_flask_backend:
         image: sgasse/uwsgi_flask_backend
         build:
             context: uwsgi_flask_backend
-        depends_on:
-            - postgres_backend
+        volumes:
+            - ./data/sqlite_data:/db
 
     nginx_frontend:
         image: nginx:1.13-alpine
