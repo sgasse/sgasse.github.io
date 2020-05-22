@@ -34,7 +34,10 @@ class SiteProcessor:
             res = pool.map(self._word_score, words)
         
         senti_weights = list(filter(lambda x: x != 0.0, res))
-        return sum(senti_weights) / len(senti_weights)
+        if senti_weights:
+            return sum(senti_weights) / len(senti_weights)
+        else:
+            return 0.0
 
     def _word_score(self, word):
         return self.senti_map.get(word, 0.0)

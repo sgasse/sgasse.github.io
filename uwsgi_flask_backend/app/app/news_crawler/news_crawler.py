@@ -6,12 +6,16 @@ from datetime import datetime, timedelta
 from sqlalchemy import create_engine, Column, Integer, String, Date, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from app.news_crawler.sentiment import SiteProcessor
 
 
 DecBase = declarative_base()
+if __name__ == '__main__':
+    DB_FILE = '/home/simon/workspace/personalPage/data/sqlite_data/news.db'
+    from sentiment import SiteProcessor
+else:
+    DB_FILE = '/db/news.db'
+    from app.news_crawler.sentiment import SiteProcessor
 SP = SiteProcessor()
-DB_FILE = '/db/news.db'
 
 
 class News(DecBase):
@@ -73,7 +77,10 @@ class NewsCrawler:
             min_date = datetime.now().date() - timedelta(days=(days - 1))
         session = self.Session()
         news_ = session.query(News).filter(News.rank < max_rank).\
-            filter(News.retrieved > min_date).all()
+            filter(News.retrieved > min_date).\
+            order_by(News.retrieved.desc()).\
+            order_by(News.rank.asc()).all()
+
         senti_norm = max([abs(t.senti_score) for t in news_])
         news_struct = [{'headline': t.headline,
                         'rank': t.rank,
@@ -86,8 +93,8 @@ class NewsCrawler:
         return news_struct 
 
     def _senti_color(self, senti_score, senti_norm):
-        red = int(255 * -0.5 * ((senti_score / senti_norm) - 1))
-        green = int(255 * 0.5 * ((senti_score / senti_norm) + 1))
+        red = int(-255*min(senti_score/senti_norm, 0))
+        green = int(255*max(senti_score / senti_norm, 0))
         return f'rgb({red}, {green}, 0)'
 
     def retrieve_and_store_news(self):
@@ -109,5 +116,4 @@ def main():
 
 
 if __name__ == '__main__':
-    DB_FILE = '/home/simon/workspace/personalPage/data/sqlite_data/news.db'
     main()
