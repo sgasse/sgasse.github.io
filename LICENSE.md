@@ -1,6 +1,6 @@
 # Website Design
 
-### Copyright (c) 2019, Simon B. Gasse
+### Copyright (c) 2019-2020, Simon B. Gasse
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Images
 
-### Copyright (c) 2019, Simon B. Gasse
+### Copyright (c) 2019-2020, Simon B. Gasse
 
 You may not copy, use or distribute the images embedded in this website.
 
@@ -27,15 +27,3 @@ You may not copy, use or distribute the images embedded in this website.
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is available with a FAQ at:
 http://scripts.sil.org/OFL
-
----
-
-
-# Projekt Deutscher Wortschatz / Leipzig Corpora Collection
-
-The corpus of positive and negative words with weights for my implementation of sentiment analysis can be downloaded [here](https://wortschatz.uni-leipzig.de/de/download). It was published as:
-
-D. Goldhahn, T. Eckart & U. Quasthoff: Building Large Monolingual Dictionaries at the Leipzig Corpora Collection: From 100 to 200 Languages.
-In: Proceedings of the 8th International Language Resources and Evaluation (LREC'12), 2012
-
-The corpus is licenced with the [Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported licence](https://creativecommons.org/licenses/by-nc-sa/3.0/).

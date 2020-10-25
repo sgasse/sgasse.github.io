@@ -1,3 +1,11 @@
-img
-venv
+# private images
+landing/img
+
+# SSL-related
+*.pem
+*.crt
+*.key
+
+# local configuration
 .vscode
+.backup

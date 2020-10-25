@@ -4,17 +4,17 @@
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
-        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='landing/landingPage.css') }}">
+        <link rel='stylesheet' type='text/css' href='css/landingPage.css'>
     </head>
 
     <body>
         <style>
             .background {
-                background-image: url("{{ bg_url }}");
+                background-image: url('img/bg_field_small.jpg');
             }
             @font-face {
                 font-family: Raleway;
-                src: url("{{ url_for('static', filename='font/raleway_thin-webfont.ttf') }}")
+                src: url('font/raleway_thin-webfont.ttf');
             }
         </style>
         <div id='background' class='background'>
@@ -36,7 +36,7 @@
                     <div class='lowerBox'>
                         <div class='personalInfo'>
                             <div>
-                                <img src="{{ url_for('static', filename='img/profile_wall.jpg') }}" alt='profilePic' id='profilePic'>
+                                <img src='img/profile_wall.jpg' alt='profilePic' id='profilePic'>
                             </div>
                             <div id='fullname'>
                                 <p>Simon B. Gasse</p>
