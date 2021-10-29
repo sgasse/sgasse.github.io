@@ -2,6 +2,7 @@ version: '3.6'
 services:
     nginx:
         image: nginx:1.19.3-alpine
+        restart: always
         volumes:
             # config and logs
             - ./data/nginx/conf:/etc/nginx/conf.d:ro
@@ -18,6 +19,7 @@ services:
         command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     certbot:
         image: certbot/certbot
+        restart: always
         volumes:
             - ./data/certbot/conf:/etc/letsencrypt
             - ./data/certbot/www:/var/www/certbot
