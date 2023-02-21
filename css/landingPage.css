@@ -52,7 +52,7 @@ table {
 
 @font-face {
     font-family: Raleway;
-    src: url('font/raleway_thin-webfont.ttf');
+    src: url('../font/raleway_thin-webfont.ttf');
 }
 
 body {
